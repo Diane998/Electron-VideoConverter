@@ -27,7 +27,7 @@ class VideoSelectScreen extends Component {
   renderChildren({ isDragActive, isDragReject }) {
     if (isDragActive) {
       return (
-        <h4 className='drop-message'>Omnomnom, let me have those videos!</h4>
+        <h4 className='drop-message'>I'm ready to convert those videos!</h4>
       );
     } else if (isDragReject) {
       return (

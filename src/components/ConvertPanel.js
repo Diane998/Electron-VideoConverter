@@ -15,7 +15,10 @@ class ConvertPanel extends Component {
         <button className='btn red' onClick={this.onCancelPressed}>
           Cancel
         </button>
-        <button className='btn' onClick={this.props.convertVideos}>
+        <button
+          className='btn'
+          onClick={() => this.props.convertVideos(this.props.videos)}
+        >
           Convert!
         </button>
       </div>
@@ -23,4 +26,6 @@ class ConvertPanel extends Component {
   }
 }
 
-export default withRouter(connect(null, actions)(ConvertPanel));
+const mapStateToProps = state => ({ videos: Object.values(state.videos) });
+
+export default withRouter(connect(mapStateToProps, actions)(ConvertPanel));
